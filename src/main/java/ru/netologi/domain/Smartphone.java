@@ -1,4 +1,4 @@
-package domain;
+package ru.netologi.domain;
 
 public class Smartphone extends Product {
     private String manufacturer;

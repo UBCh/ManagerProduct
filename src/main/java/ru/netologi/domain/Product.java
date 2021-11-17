@@ -1,13 +1,12 @@
-package domain;
+package ru.netologi.domain;
 
-import java.util.Objects;
-
-public abstract class Product {
+public class Product {
     public int id;
     public String name;
     public int price;
 
     public Product() {
+        super();
     }
 
     public Product(int id, String name, int price) {
@@ -39,6 +38,7 @@ public abstract class Product {
     public void setPrice(int price) {
         this.price = price;
     }
-
-
 }
+
+
+

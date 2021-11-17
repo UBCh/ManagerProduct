@@ -1,4 +1,4 @@
-package domain;
+package ru.netologi.domain;
 
 public class Book extends Product {
     private String author;
