@@ -14,13 +14,13 @@ class ProductManagerTest {
     public Smartphone coreJavaS = new Smartphone(2, "telephone1", 100, "singapore");
 
 
-
     @BeforeEach
     public void shouldSetUp() {
         manager.save(coreJava);
         manager.save(coreJavaS);
 
     }
+
     @Test
     public void shouldFindAll() {
         Product[] expected = {coreJava, coreJavaS};
@@ -30,13 +30,36 @@ class ProductManagerTest {
 
     @Test
     public void shouldSearchBy_one() {
-        Product[] expected = {"book1"};
-        Product[] actual = manager.searchBy("noName1");
+        Product[] expected = {coreJavaS};
+        Product[] actual = manager.searcyBy("singapore");
         assertArrayEquals(expected, actual);
 
 
+    }
 
+    @Test
+    public void shouldSearchBy_two() {
+        Product[] expected = {coreJava};
+        Product[] actual = manager.searcyBy("noName1");
+        assertArrayEquals(expected, actual);
+     }
+    @Test
+    public void shouldSearchBy_three() {
+        Product[] expected = {coreJava};
+        Product[] actual = manager.searcyBy("book1");
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void shouldSearchBy_four() {
+        Product[] expected = {coreJavaS};
+        Product[] actual = manager.searcyBy("telephone1");
+        assertArrayEquals(expected, actual);
+    }
 
-
-
+    @Test
+    public void shouldSearchBy_five() {
+        Product[] expected = {};
+        Product[] actual = manager.searcyBy("telefone");
+        assertArrayEquals(expected, actual);
+    }
 }
