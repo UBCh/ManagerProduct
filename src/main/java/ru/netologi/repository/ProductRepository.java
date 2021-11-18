@@ -47,6 +47,7 @@ public class ProductRepository {
             if (book.getName().contains(search)) {
                 return true;
             }
+
         }
         if (product instanceof Smartphone) {
             Smartphone smartphone = (Smartphone) product;

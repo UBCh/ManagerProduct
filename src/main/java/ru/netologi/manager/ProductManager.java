@@ -28,14 +28,14 @@ public class ProductManager {
 
     public Product[] searcyBy(String text) {
         Product[] result = new Product[0];
-        for (Product product: repository.findAll()) {
+        Product[] tmp = new Product[result.length + 1];
+           for (Product product: repository.findAll()) {
             if (repository.matches(product, text)) {
-                Product[] tmp = new Product[result.length + 1];
-                // используйте System.arraycopy, чтобы скопировать всё из result в tmp
-                tmp[tmp.length - 1] = product;
-                result = tmp;
+              tmp[tmp.length - 1] = product;
+            result = tmp;
             }
-        }
+                    }
+
         return result;
     }
 

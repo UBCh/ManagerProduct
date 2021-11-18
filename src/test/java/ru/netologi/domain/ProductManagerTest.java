@@ -29,7 +29,7 @@ class ProductManagerTest {
     }
 
     @Test
-    public void shouldSearchBy_one() {
+    public void shouldSearchByOne() {
         Product[] expected = {coreJavaS};
         Product[] actual = manager.searcyBy("singapore");
         assertArrayEquals(expected, actual);
@@ -38,26 +38,26 @@ class ProductManagerTest {
     }
 
     @Test
-    public void shouldSearchBy_two() {
+    public void shouldSearchByTwo() {
         Product[] expected = {coreJava};
         Product[] actual = manager.searcyBy("noName1");
         assertArrayEquals(expected, actual);
      }
     @Test
-    public void shouldSearchBy_three() {
+    public void shouldSearchByThree() {
         Product[] expected = {coreJava};
         Product[] actual = manager.searcyBy("book1");
         assertArrayEquals(expected, actual);
     }
     @Test
-    public void shouldSearchBy_four() {
+    public void shouldSearchByFour() {
         Product[] expected = {coreJavaS};
         Product[] actual = manager.searcyBy("telephone1");
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldSearchBy_five() {
+    public void shouldSearchByFive() {
         Product[] expected = {};
         Product[] actual = manager.searcyBy("telefone");
         assertArrayEquals(expected, actual);
