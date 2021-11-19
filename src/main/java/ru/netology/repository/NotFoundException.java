@@ -1,4 +1,4 @@
-package ru.netologi.repository;
+package ru.netology.repository;
 
 public class NotFoundException extends RuntimeException{
 
