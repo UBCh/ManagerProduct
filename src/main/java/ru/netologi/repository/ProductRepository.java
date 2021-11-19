@@ -5,7 +5,9 @@ import ru.netologi.domain.Product;
 import ru.netologi.domain.Smartphone;
 
 public class ProductRepository {
+
     public Product[] items = new Product[0];
+
 
     public Book coreJava = new Book();
     public Smartphone coreJavaS = new Smartphone();
@@ -24,9 +26,17 @@ public class ProductRepository {
         return this.items;
     }
 
+    public boolean findById(int id) {
+         for (Product item : items) {
+         if (item.getId() == id) {break; return true;}
+              return false;
+                          }
+    }
 
     public void removeById(int id) {
-        int length = items.length - 1;
+        if (findById() = false)
+        { throw new NotFoundException("Element with id: " + id + " not found");}
+         int length = items.length - 1;
         Product[] tmp = new Product[length];
         int index = 0;
         for (Product item : items) {
@@ -36,7 +46,7 @@ public class ProductRepository {
             }
         }
         items = tmp;
-    }
+            }
 
     public boolean matches(Product product, String search) {
         if (product instanceof Book) {
@@ -60,6 +70,7 @@ public class ProductRepository {
         }
         return false;
     }
+
 }
 
 
