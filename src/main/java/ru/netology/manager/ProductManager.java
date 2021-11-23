@@ -33,6 +33,7 @@ public class ProductManager {
                 Product[] tmp = new Product[result.length + 1];
                 tmp[tmp.length - 1] = product;
                 System.arraycopy(result, 0, tmp, 0, result.length);
+                result = tmp;
             }
         }
 
