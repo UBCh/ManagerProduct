@@ -48,37 +48,41 @@ class ProductManagerTest {
         Product[] expected = {coreJavaS, coreJavaS3};
         Product[] actual = manager.searcyBy("singapore");
         assertArrayEquals(expected, actual);
-
-
-        @Test
-        public void shouldSearchByAutor () {
-            Product[] expected = {coreJava2};
-            Product[] actual = manager.searcyBy("noName2");
-            assertArrayEquals(expected, actual);
-        }
-        @Test
-        public void shouldSearchByAutorSeveral () {
-            Product[] expected = {coreJava, coreJava1};
-            Product[] actual = manager.searcyBy("noName1");
-            assertArrayEquals(expected, actual);
-        }
-        @Test
-        public void shouldSearchByName () {
-            Product[] expected = {coreJava};
-            Product[] actual = manager.searcyBy("book1");
-            assertArrayEquals(expected, actual);
-        }
-        @Test
-        public void shouldSearchByFourName () {
-            Product[] expected = {coreJavaS};
-            Product[] actual = manager.searcyBy("telephone1");
-            assertArrayEquals(expected, actual);
-        }
-
-        @Test
-        public void shouldSearchByFiveNameNegativ () {
-            Product[] expected = {};
-            Product[] actual = manager.searcyBy("telefone");
-            assertArrayEquals(expected, actual);
-        }
     }
+
+
+    @Test
+    public void shouldSearchByAutor() {
+        Product[] expected = {coreJava2};
+        Product[] actual = manager.searcyBy("noName2");
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchByAutorSeveral() {
+        Product[] expected = {coreJava, coreJava1};
+        Product[] actual = manager.searcyBy("noName1");
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchByName() {
+        Product[] expected = {coreJava};
+        Product[] actual = manager.searcyBy("book1");
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchByFourName() {
+        Product[] expected = {coreJavaS};
+        Product[] actual = manager.searcyBy("telephone1");
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchByFiveNameNegativ() {
+        Product[] expected = {};
+        Product[] actual = manager.searcyBy("telefone");
+        assertArrayEquals(expected, actual);
+    }
+}

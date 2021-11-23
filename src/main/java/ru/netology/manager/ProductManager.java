@@ -32,9 +32,7 @@ public class ProductManager {
         for (Product product : repository.findAll()) {
             if (matches(product, text)) {
                 tmp[tmp.length - 1] = product;
-                // result = System.arraycopy(tmp); - с этой строкой не компилируется,
-                // проблему решить не смогла , метод просит int, а не STRING
-                result = tmp;
+                System.arraycopy(result, 0, tmp, 0, result.length);
             }
         }
 

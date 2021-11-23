@@ -26,19 +26,17 @@ public class ProductRepository {
         return this.items;
     }
 
-    public boolean findById(int id) {
+    public Product findById(int id) {
         for (Product item : items) {
             if (item.getId() == id) {
-                break;
-                return true;
+                return item;
             }
-            return false;
         }
+        return null;
     }
 
     public void removeById(int id) {
-        if (findById() = false) // здесь тоже не смогла найти причину
-        {
+        if (findById(id) == null) {
             throw new NotFoundException("Element with id: " + id + " not found");
         }
         int length = items.length - 1;

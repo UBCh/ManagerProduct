@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import ru.netology.domain.Book;
+import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 
 class ProductRepositoryTest {
@@ -25,22 +26,22 @@ class ProductRepositoryTest {
         repository.save(coreJavaS);
         repository.save(coreJavaS2);
         repository.save(coreJavaS3);
-
-
-        @Test
-        public void shoulRemoveById() {
-            boolean expected = true;
-            boolean actual = repository.findById(1);
-            assertEquals(expected, actual);
-        }
-
-        @Test
-        public void shouldfindByIdOne() {
-            boolean expected = true;
-            boolean actual = repository.findById(0);
-            assertThrows(NotFoundException.class, () -> repository.removeById(3));
-        }
-
-
     }
+
+
+    @Test
+    public void shoulRemoveById() {
+        Product expected = coreJava;
+        Product actual = repository.findById(1);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldfindByIdOne() {
+        Product expected = null;
+        assertThrows(NotFoundException.class, () -> repository.removeById(0));
+    }
+
+
+}
 
